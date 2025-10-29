@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="bg-black text-gray-300 px-6 md:px-20 py-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Logo + About */}
+        
         <div>
           <h2 className="text-lg font-bold text-white">
             Male & Female <span className="text-cyan-500">fashion.</span>
@@ -13,7 +13,7 @@ function Footer() {
             The customer is at the heart of our unique business model, which
             includes design.
           </p>
-          {/* Payment icons */}
+          
           <div className="flex gap-3 mt-5">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"
@@ -97,7 +97,7 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Newsletter */}
+        
         <div>
           <h3 className="text-white font-semibold mb-4">NEWSLETTER</h3>
           <p className="text-sm mb-4">
@@ -126,7 +126,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="mt-10 border-t border-gray-700 pt-5 text-center text-sm">
         Copyright © 2025 All rights reserved | This template is made with{" "}
         <span className="text-red-500">♥</span> by{" "}

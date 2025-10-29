@@ -4,7 +4,7 @@ import axios from "axios";
 function Cart() {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const [receipt, setReceipt] = useState(null); // ✅ new state for receipt
+  const [receipt, setReceipt] = useState(null); //  new state for receipt
 
   useEffect(() => {
     const fetchCart = async () => {
@@ -43,7 +43,7 @@ function Cart() {
     }
   };
 
-  // ✅ Checkout Function
+  //  Checkout Function
   const handleCheckout = async () => {
     try {
       const cartItems = cart.map((item) => ({
@@ -109,7 +109,7 @@ function Cart() {
           <div className="mt-8 text-right border-t pt-4">
             <p className="text-lg font-semibold">Total: ₹{total}</p>
 
-            {/* ✅ Checkout Button */}
+            {/* Checkout Button */}
             <button
               onClick={handleCheckout}
               className="bg-blue-600 text-white px-6 py-2 rounded mt-4 hover:bg-blue-700"
@@ -120,7 +120,7 @@ function Cart() {
         </>
       )}
 
-      {/* ✅ Show receipt after checkout */}
+      {/* Show receipt after checkout */}
       {receipt && (
         <div className="mt-8 p-4 border rounded bg-green-50">
           <h3 className="font-semibold text-lg mb-2">Receipt</h3>

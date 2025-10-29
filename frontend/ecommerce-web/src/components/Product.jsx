@@ -4,7 +4,7 @@ import axios from "axios";
 function Product() {
   const [products, setProducts] = useState([]);
 
-  // ✅ Load products on mount
+  // Load products on mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {

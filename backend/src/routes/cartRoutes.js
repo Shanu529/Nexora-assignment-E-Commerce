@@ -7,7 +7,7 @@ import { addToCart, getCart, removeFromCart } from "../controllers/cartControlle
 
 const router = express.Router();
 
-// Cart Routes
+// Cart Routess
 router.get("/:userId", getCart);
 router.post("/", addToCart);
 router.delete("/:id", removeFromCart);

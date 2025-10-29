@@ -21,7 +21,7 @@ function HeroSection() {
           </button>
         </div>
 
-        <div className="h-[70%] my-5">
+        <div className="h-[80%] my-5">
           <img
             src="/images/hero.jpg"
             alt=""

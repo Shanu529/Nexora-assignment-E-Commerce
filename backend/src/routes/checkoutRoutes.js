@@ -1,4 +1,7 @@
-// routes/checkoutRoutes.js
+
+
+
+
 import express from "express";
 import { checkout } from "../controllers/checkoutController.js";
 

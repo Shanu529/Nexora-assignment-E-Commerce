@@ -11,9 +11,9 @@ function CreateProduct() {
     category: "",
     inStock: true,
   });
-  const [editId, setEditId] = useState(null); // 🆕 Track product being edited
+  const [editId, setEditId] = useState(null); // Track product being edited
 
-  // ✅ Fetch all products
+  // Fetch all products
   const fetchProducts = async () => {
     try {
       const res = await axios.get(
@@ -29,7 +29,7 @@ function CreateProduct() {
     fetchProducts();
   }, []);
 
-  // ✅ Create or Update product (combined)
+  // Create or Update product
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -39,7 +39,7 @@ function CreateProduct() {
           `${import.meta.env.VITE_BACKEND_URL}/api/v2/products/${editId}`,
           formData
         );
-        alert("✅ Product updated successfully!");
+        alert("✅  Product updated successfully!");
         setEditId(null);
       } else {
         // 🔹 Else create new
@@ -66,7 +66,7 @@ function CreateProduct() {
     }
   };
 
-  // ✅ Load product into form for editing
+  //  Load product into form for editing
   const handleEdit = (product) => {
     setFormData({
       name: product.name,
@@ -79,7 +79,6 @@ function CreateProduct() {
     setEditId(product._id); // set edit mode
   };
 
-  // ✅ Delete product
   const handleDelete = async (id) => {
     try {
       await axios.delete(
@@ -97,7 +96,6 @@ function CreateProduct() {
     <section className="py-12 px-6 max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold mb-6">Admin — Manage Products</h2>
 
-      {/* ✅ Create / Update Form */}
       <form
         onSubmit={handleSubmit}
         className="space-y-4 border p-6 rounded-lg shadow-md bg-white"
@@ -171,7 +169,6 @@ function CreateProduct() {
         </button>
       </form>
 
-      {/* ✅ Product List */}
       <div className="mt-10 space-y-4">
         <h3 className="text-xl font-semibold mb-4">All Products</h3>
 
@@ -190,7 +187,7 @@ function CreateProduct() {
 
               <div className="space-x-3">
                 <button
-                  onClick={() => handleEdit(product)} // 🆕 now loads product into form
+                  onClick={() => handleEdit(product)} 
                   className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                 >
                   Edit

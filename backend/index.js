@@ -13,7 +13,7 @@ mongoDbconnection();
 
 const app = express();
 
-//  CORS setup — must be after express() and before routes
+//  CORS setup — must be after express()
 const allowedOrigins = [
   "https://nexora-assignment-e-commerce-fronte.vercel.app",
   "http://localhost:5173",

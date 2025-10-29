@@ -47,7 +47,7 @@ function Auth() {
       if (data?.token) {
         localStorage.setItem("token", data.token);
 
-        // ✅ Decode token to get user id
+        // Decode token to get user id
         const decoded = decodeJWT(data.token);
         if (decoded?.id) {
           localStorage.setItem("userId", decoded.id);
