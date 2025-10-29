@@ -14,10 +14,20 @@ mongoDbconnection();
 const app = express();
 
 app.use(express.json());
+const allowedOrigins = [
+  "https://nexora-assignment-e-commerce-fronte.vercel.app",
+  "http://localhost:5173",
+];
 
 app.use(
   cors({
-    origin: "https://nexora-assignment-e-commerce-fronte.vercel.app/",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
