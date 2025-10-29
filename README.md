@@ -35,10 +35,8 @@ all the endpoints are cover in this project
 API Endpoints
 
 
-afrer visiting Live project mak  sure you will be login or register yourself after then you can use that website
-here is short link how website look like => 
-
-<img width="1372" height="574" alt="Screenshot 2025-10-29 100826" src="https://github.com/user-attachments/assets/6ebbb7f6-3d31-4ecc-b4cd-9c83be4c1058" />
+afrer visiting Live project make sure you will be login or register yourself appre in navbar login buttuon  after then you can use that website and if you want to add products there are also option in navbar just click on that
+here is short link how website look like => https://youtu.be/Q07FvFtd75c?si=91ty-l7xDeGrXM-1
 
 🧑‍💻 Developer
 shanu chhetri
