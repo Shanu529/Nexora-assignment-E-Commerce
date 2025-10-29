@@ -35,19 +35,19 @@ app.use(
 //  Body parser
 app.use(express.json());
 
-// ✅ Basic test route
+//  Basic test route
 app.get("/", (req, res) => {
   res.send("Hello! Backend server running...");
 });
 
-// ✅ API routes
+// API routes
 app.use("/api/v1/user", authUser);
 app.use("/api/v2/products", productsRoutes);
 app.use("/api/v3/cart-list", cartRoutes);
 app.use("/api/checkout", checkoutRoutes);
 
-// ✅ Server listener
+//  Server listener
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`✅ Server started on port ${PORT}`);
+  console.log(` Server started on port ${PORT}`);
 });
