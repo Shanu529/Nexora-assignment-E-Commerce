@@ -13,7 +13,7 @@ mongoDbconnection();
 
 const app = express();
 
-app.use(express.json());
+//  CORS setup — must be after express() and before routes
 const allowedOrigins = [
   "https://nexora-assignment-e-commerce-fronte.vercel.app",
   "http://localhost:5173",
@@ -32,17 +32,22 @@ app.use(
   })
 );
 
-const PORT = process.env.PORT || 5000;
+//  Body parser
+app.use(express.json());
 
+// ✅ Basic test route
 app.get("/", (req, res) => {
   res.send("Hello! Backend server running...");
 });
 
+// ✅ API routes
 app.use("/api/v1/user", authUser);
 app.use("/api/v2/products", productsRoutes);
 app.use("/api/v3/cart-list", cartRoutes);
 app.use("/api/checkout", checkoutRoutes);
 
+// ✅ Server listener
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server started on port ${PORT}`);
 });
