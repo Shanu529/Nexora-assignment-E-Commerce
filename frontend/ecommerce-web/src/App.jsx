@@ -1,14 +1,12 @@
-
-
 import { useState } from "react";
 import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home"
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Cart from "./pages/cart";
-import Register from "./pages/Register"
+import Register from "./pages/Register";
 import CreateProduct from "./pages/CreateProduct";
 
 function App() {
@@ -17,8 +15,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-
-         <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

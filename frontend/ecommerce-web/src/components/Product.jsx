@@ -21,10 +21,10 @@ function Product() {
     fetchProducts();
   }, []);
 
-  // ✅ Add to cart
+  //  Add to cart
   const handleAddToCart = async (productId) => {
     try {
-      // ✅ Get userId from localStorage (saved at login/register)
+      //  Get userId from localStorage (saved at login/register)
       const userId = localStorage.getItem("userId");
 
       if (!userId) {
@@ -41,7 +41,7 @@ function Product() {
         }
       );
 
-      alert("✅ Added to cart successfully!");
+      alert(" Added to cart successfully!");
       console.log("Cart updated:", response.data);
     } catch (error) {
       console.error("❌ Error adding to cart:", error);
@@ -50,28 +50,21 @@ function Product() {
   };
 
   return (
-    <section className="py-12 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Tabs */}
-        <div className="flex space-x-8 mb-8">
-          <h2 className="text-2xl font-bold border-b-2 border-black pb-1">
-            Best Sellers
-          </h2>
-          <h2 className="text-2xl text-gray-400 cursor-pointer hover:text-black">
-            New Arrivals
-          </h2>
-          <h2 className="text-2xl text-gray-400 cursor-pointer hover:text-black">
-            Hot Sales
-          </h2>
-        </div>
+    <section className=" px-6 mt-14 md:mt-0">
+      <hr className="text-cyan-500" />
+      <p className="text-cyan-800 font-bold md:text-2xl md:w-1/3 my-5">
+        here is the list of products available for purchase.
+      </p>
 
-        {/* Product Grid */}
+      <div className="py-10">
+ 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.length > 0 ? (
             products.map((product) => (
-              <div key={product._id} className="group relative">
-                <div className="relative bg-gray-100">
+              <div key={product._id} className="group relative ">
+                <div className="relative bg-gray-100 hover:scale-105 transition-all duration-700 shadow-md rounded-lg overflow-hidden">
                   <img
+                    
                     src={product.image || "/img/default-product.jpg"}
                     alt={product.name}
                     className="w-full h-64 object-cover"
@@ -98,12 +91,16 @@ function Product() {
                 <div className="mt-3 space-y-1">
                   <button
                     onClick={() => handleAddToCart(product._id)}
-                    className="text-red-600 text-sm font-medium hover:underline"
+                    className="text-cyan-500 text-sm font-medium hover:underline"
                   >
                     + Add To Cart
                   </button>
-                  <h3 className="text-gray-700 font-semibold">{product.name}</h3>
-                  <p className="font-semibold text-gray-800">${product.price}</p>
+                  <h3 className="text-gray-700 font-semibold">
+                    {product.name}
+                  </h3>
+                  <p className="font-semibold text-gray-800">
+                    ${product.price}
+                  </p>
                 </div>
               </div>
             ))
