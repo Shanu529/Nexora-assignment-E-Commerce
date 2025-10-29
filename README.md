@@ -38,7 +38,7 @@ Backend
 🌍 CORS
 
 ✨ Features
-
+all the API endpoint are cover are in this project
 ✅ User registration & login (JWT-based authentication)
 ✅ View all products
 ✅ Add & remove products from the cart
