@@ -37,7 +37,7 @@ API Endpoints
 
 🧑‍💻 Developer
 shanu chhetri
-📧 abhishekyadav907665@gmail.com
+📧 shanu.chhetri529@gmail.com
 💼 GitHub – Shanu529
 
 
