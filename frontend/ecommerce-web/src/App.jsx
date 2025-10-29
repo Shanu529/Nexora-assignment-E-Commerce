@@ -9,6 +9,7 @@ import Cart from "./pages/cart";
 import Register from "./pages/Register";
 import CreateProduct from "./pages/CreateProduct";
 
+import { Toaster } from "react-hot-toast";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/admin" element={<CreateProduct />} />
         </Routes>
       </BrowserRouter>
+       <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 }

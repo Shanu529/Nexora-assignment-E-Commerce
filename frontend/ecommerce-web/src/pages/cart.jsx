@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function Cart() {
   const [cart, setCart] = useState([]);
@@ -58,12 +59,14 @@ function Cart() {
       );
 
       setReceipt(res.data.receipt);
-      alert("Checkout successful!");
+
+      toast.success("Checkout successful!");
       setCart([]); // optional: clear cart
       setTotal(0);
     } catch (error) {
       console.error("Checkout failed:", error);
-      alert("Checkout failed!");
+
+      toast.error("Checkout failed!");
     }
   };
 

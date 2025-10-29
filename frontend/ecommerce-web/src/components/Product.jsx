@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
 
 function Product() {
   const [products, setProducts] = useState([]);
@@ -28,7 +29,7 @@ function Product() {
       const userId = localStorage.getItem("userId");
 
       if (!userId) {
-        alert("Please login first!");
+        toast.error("Please login first!");
         return;
       }
 
@@ -41,11 +42,10 @@ function Product() {
         }
       );
 
-      alert(" Added to cart successfully!");
+      toast.success(" Added to cart successfully!");
       console.log("Cart updated:", response.data);
     } catch (error) {
-      console.error("❌ Error adding to cart:", error);
-      alert("Failed to add product to cart");
+      toast.error("Failed to add product to cart");
     }
   };
 
@@ -57,14 +57,12 @@ function Product() {
       </p>
 
       <div className="py-10">
- 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {products.length > 0 ? (
             products.map((product) => (
               <div key={product._id} className="group relative ">
                 <div className="relative bg-gray-100 hover:scale-105 transition-all duration-700 shadow-md rounded-lg overflow-hidden">
                   <img
-                    
                     src={product.image || "/img/default-product.jpg"}
                     alt={product.name}
                     className="w-full h-64 object-cover"

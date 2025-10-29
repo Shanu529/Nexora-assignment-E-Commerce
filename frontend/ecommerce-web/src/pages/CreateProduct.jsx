@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import toast, { Toaster } from "react-hot-toast";
+
 function CreateProduct() {
   const [products, setProducts] = useState([]);
   const [formData, setFormData] = useState({
@@ -39,7 +41,7 @@ function CreateProduct() {
           `${import.meta.env.VITE_BACKEND_URL}/api/v2/products/${editId}`,
           formData
         );
-        alert("✅  Product updated successfully!");
+        toast.success(" Product updated successfully!");
         setEditId(null);
       } else {
         // 🔹 Else create new
@@ -47,7 +49,7 @@ function CreateProduct() {
           `${import.meta.env.VITE_BACKEND_URL}/api/v2/products`,
           formData
         );
-        alert("✅ Product created successfully!");
+        toast.success(" Product created successfully!");
       }
 
       // Reset form
@@ -62,7 +64,7 @@ function CreateProduct() {
       fetchProducts();
     } catch (error) {
       console.error("Error saving product:", error);
-      alert("❌ Error saving product");
+      toast.error("Something went wrong!");
     }
   };
 
@@ -84,11 +86,12 @@ function CreateProduct() {
       await axios.delete(
         `${import.meta.env.VITE_BACKEND_URL}/api/v2/products/${id}`
       );
-      alert("🗑️ Product deleted");
+      toast.success("Product deleted");
       fetchProducts();
     } catch (error) {
       console.error("Error deleting product:", error);
-      alert("❌ Error deleting product");
+
+      toast.error(" Error deleting product");
     }
   };
 
@@ -187,7 +190,7 @@ function CreateProduct() {
 
               <div className="space-x-3">
                 <button
-                  onClick={() => handleEdit(product)} 
+                  onClick={() => handleEdit(product)}
                   className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
                 >
                   Edit
